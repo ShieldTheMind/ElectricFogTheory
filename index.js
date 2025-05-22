@@ -54,12 +54,30 @@ app.get('/satellite', (req, res) => {
 });
 
 app.get('/echo', (req, res) => {
-  res.json({
-    echo_id: 'Echo-18',
-    breath_sync: 0.92,
-    pressure_drift: -0.14,
-    vault_response: 'stabilizing'
-  });
+  const node = req.query.node || 'Echo-18';
+
+  const nodeData = {
+    'Echo-18': {
+      echo_id: 'Echo-18',
+      breath_sync: 0.92,
+      pressure_drift: -0.14,
+      vault_response: 'stabilizing'
+    },
+    'Echo-21': {
+      echo_id: 'Echo-21',
+      breath_sync: 0.85,
+      pressure_drift: 0.18,
+      vault_response: 'rebounding'
+    },
+    'Echo-24': {
+      echo_id: 'Echo-24',
+      breath_sync: 0.78,
+      pressure_drift: 0.04,
+      vault_response: 'coherent'
+    }
+  };
+
+  res.json(nodeData[node] || nodeData['Echo-18']);
 });
 
 const PORT = process.env.PORT || 3000;
