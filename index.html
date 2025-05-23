@@ -1,1 +1,30 @@
-<!DOCTYPE html><html><head><title>VaultWeather</title></head><body><h1>VaultWeather Frontend</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VaultWeather - Solar & Lunar Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>VaultWeather: Solar & Lunar Module</h1>
+    <div id="dashboard">
+      <div class="card" id="solar">
+        <h2>Solar Data</h2>
+        <p id="solar-data">Loading...</p>
+      </div>
+      <div class="card" id="lunar">
+        <h2>Lunar Data</h2>
+        <p id="lunar-data">Loading...</p>
+      </div>
+      <div class="card" id="vaultscore">
+        <h2>Vault Resonance Score</h2>
+        <p id="vault-score">Calculating...</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
