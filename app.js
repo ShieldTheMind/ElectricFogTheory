@@ -1,0 +1,1 @@
+console.log('VaultWeather frontend app running');
